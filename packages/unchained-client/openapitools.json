@@ -96,6 +96,19 @@
           "useSingleRequestParameter": true
         }
       },
+      "blackfury": {
+        "inputSpec": "https://raw.githubusercontent.com/merlins-labs/unchained/develop/node/coinstacks/blackfury/api/src/swagger.json",
+        "generatorName": "typescript-fetch",
+        "output": "#{cwd}/src/generated/blackfury",
+        "enablePostProcessFile": true,
+        "reservedWordsMappings": {
+          "in": "in"
+        },
+        "additionalProperties": {
+          "supportsES6": "true",
+          "useSingleRequestParameter": true
+        }
+      },
       "litecoin": {
         "inputSpec": "https://raw.githubusercontent.com/shapeshift/unchained/develop/node/coinstacks/litecoin/api/src/swagger.json",
         "generatorName": "typescript-fetch",

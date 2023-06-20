@@ -45,30 +45,30 @@ describe('adapters:coingecko', () => {
       expect(coingeckoToAssetIds('ethereum')).toEqual([ethOnEthereum, ethOnOptimism])
     })
 
-    it('can get AssetIds id for FOX', () => {
+    it('can get AssetIds id for JINX', () => {
       const assetNamespace = 'erc20'
-      const foxOnEthereum = toAssetId({
+      const jinxOnEthereum = toAssetId({
         chainNamespace: CHAIN_NAMESPACE.Evm,
         chainReference: CHAIN_REFERENCE.EthereumMainnet,
         assetNamespace,
         assetReference: '0xc770eefad204b5180df6a14ee197d99d808ee52d',
       })
-      const foxOnPolygon = toAssetId({
+      const jinxOnPolygon = toAssetId({
         chainNamespace: CHAIN_NAMESPACE.Evm,
         chainReference: CHAIN_REFERENCE.PolygonMainnet,
         assetNamespace,
         assetReference: '0x65a05db8322701724c197af82c9cae41195b0aa8',
       })
-      const foxOnGnosis = toAssetId({
+      const jinxOnGnosis = toAssetId({
         chainNamespace: CHAIN_NAMESPACE.Evm,
         chainReference: CHAIN_REFERENCE.GnosisMainnet,
         assetNamespace,
         assetReference: '0x21a42669643f45bc0e086b8fc2ed70c23d67509d',
       })
-      expect(coingeckoToAssetIds('shapeshift-fox-token')).toEqual([
-        foxOnEthereum,
-        foxOnPolygon,
-        foxOnGnosis,
+      expect(coingeckoToAssetIds('shapeshift-jinx-token')).toEqual([
+        jinxOnEthereum,
+        jinxOnPolygon,
+        jinxOnGnosis,
       ])
     })
 
@@ -175,13 +175,13 @@ describe('adapters:coingecko', () => {
       expect(assetIdToCoingecko(assetId)).toEqual('ethereum')
     })
 
-    it('can get CoinGecko id for FOX', () => {
+    it('can get CoinGecko id for JINX', () => {
       const chainNamespace = CHAIN_NAMESPACE.Evm
       const chainReference = CHAIN_REFERENCE.EthereumMainnet
       const assetNamespace = 'erc20'
       const assetReference = '0xc770eefad204b5180df6a14ee197d99d808ee52d'
       const assetId = toAssetId({ chainNamespace, chainReference, assetNamespace, assetReference })
-      expect(assetIdToCoingecko(assetId)).toEqual('shapeshift-fox-token')
+      expect(assetIdToCoingecko(assetId)).toEqual('shapeshift-jinx-token')
     })
 
     it('can get CoinGecko id for cosmos AssetId', () => {

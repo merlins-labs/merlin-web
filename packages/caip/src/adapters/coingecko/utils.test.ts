@@ -29,9 +29,9 @@ const makeAvalancheMockCoingeckoResponse = () => ({
   platforms: {},
 })
 
-const makeFoxMockCoingeckoResponse = () => ({
-  id: 'shapeshift-fox-token',
-  symbol: 'fox',
+const makeJinxMockCoingeckoResponse = () => ({
+  id: 'shapeshift-jinx-token',
+  symbol: 'jinx',
   platforms: {
     ethereum: '0xc770eefad204b5180df6a14ee197d99d808ee52d',
   },
@@ -109,7 +109,7 @@ describe('adapters:coingecko:utils', () => {
       const result = parseData([
         makeEthMockCoingeckoResponse(),
         makeWethMockCoingeckoResponse(),
-        makeFoxMockCoingeckoResponse(),
+        makeJinxMockCoingeckoResponse(),
         makeBtcMockCoingeckoResponse(),
         makeCosmosMockCoingeckoResponse(),
         makeOsmosisMockCoingeckoResponse(),
@@ -143,7 +143,7 @@ describe('adapters:coingecko:utils', () => {
         'eip155:1': {
           'eip155:1/slip44:60': 'ethereum',
           'eip155:1/erc20:0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2': 'weth',
-          'eip155:1/erc20:0xc770eefad204b5180df6a14ee197d99d808ee52d': 'shapeshift-fox-token',
+          'eip155:1/erc20:0xc770eefad204b5180df6a14ee197d99d808ee52d': 'shapeshift-jinx-token',
         },
         'eip155:43114': {
           'eip155:43114/slip44:60': 'avalanche-2',
@@ -178,7 +178,7 @@ describe('adapters:coingecko:utils', () => {
           assetIdDef: 'efferium',
         },
         bar: {
-          assetIdGhi: 'fox',
+          assetIdGhi: 'jinx',
           assetIdJkl: 'shib',
         },
       }

@@ -1,6 +1,6 @@
 import { KnownChainIds } from '@shapeshiftoss/types'
 
-import { BTC, ETH, FOX_MAINNET, USDC_GNOSIS, WETH, XDAI } from '../../utils/test-data/assets'
+import { BTC, ETH, JINX_MAINNET, USDC_GNOSIS, WETH, XDAI } from '../../utils/test-data/assets'
 import type { CowChainId } from '../types'
 import { getMinimumAmountCryptoHuman } from './getMinimumAmountCryptoHuman'
 
@@ -13,14 +13,14 @@ const supportedChainIds: CowChainId[] = [KnownChainIds.EthereumMainnet, KnownCha
 
 describe('getMinimumAmountCryptoHuman', () => {
   it('returns minimumAmountCryptoHuman and maximumAmountCryptoHuman', () => {
-    const maybeMin = getMinimumAmountCryptoHuman(FOX_MAINNET, WETH, supportedChainIds)
+    const maybeMin = getMinimumAmountCryptoHuman(JINX_MAINNET, WETH, supportedChainIds)
     expect(maybeMin.isErr()).toBe(false)
     const minimumAmountCryptoHuman = maybeMin.unwrap()
     expect(minimumAmountCryptoHuman).toBe('80')
   })
 
   it('returns minimumAmountCryptoHuman and maximumAmountCryptoHuman for ETH as buy asset', () => {
-    const maybeMin = getMinimumAmountCryptoHuman(FOX_MAINNET, WETH, supportedChainIds)
+    const maybeMin = getMinimumAmountCryptoHuman(JINX_MAINNET, WETH, supportedChainIds)
     expect(maybeMin.isErr()).toBe(false)
     const minimumAmountCryptoHuman = maybeMin.unwrap()
     expect(minimumAmountCryptoHuman).toBe('80')
@@ -46,7 +46,7 @@ describe('getMinimumAmountCryptoHuman', () => {
       expectedError,
     )
     expect(
-      getMinimumAmountCryptoHuman(FOX_MAINNET, BTC, supportedChainIds).unwrapErr(),
+      getMinimumAmountCryptoHuman(JINX_MAINNET, BTC, supportedChainIds).unwrapErr(),
     ).toMatchObject(expectedError)
     expect(
       getMinimumAmountCryptoHuman(XDAI, USDC_GNOSIS, supportedChainIds).unwrapErr(),

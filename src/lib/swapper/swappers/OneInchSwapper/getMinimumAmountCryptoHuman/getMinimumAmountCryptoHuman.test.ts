@@ -1,4 +1,4 @@
-import { FOX_MAINNET, WETH } from '../../utils/test-data/assets'
+import { JINX_MAINNET, WETH } from '../../utils/test-data/assets'
 import { getMinimumAmountCryptoHuman } from './getMinimumAmountCryptoHuman'
 
 jest.mock('state/zustand/swapperStore/amountSelectors', () => ({
@@ -7,8 +7,8 @@ jest.mock('state/zustand/swapperStore/amountSelectors', () => ({
 }))
 
 describe('getMinimumAmountCryptoHuman', () => {
-  it('returns min and max expected values for FOX', () => {
-    const sellAsset = { ...FOX_MAINNET }
+  it('returns min and max expected values for JINX', () => {
+    const sellAsset = { ...JINX_MAINNET }
     const buyAsset = { ...WETH }
     const maybeMin = getMinimumAmountCryptoHuman(sellAsset, buyAsset)
     expect(maybeMin.isErr()).toBe(false)

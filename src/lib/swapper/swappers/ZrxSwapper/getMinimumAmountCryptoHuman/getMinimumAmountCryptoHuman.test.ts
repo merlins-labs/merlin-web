@@ -1,4 +1,4 @@
-import { AVAX, BSC, BTC, FOX_MAINNET, OPTIMISM, WETH } from '../../utils/test-data/assets'
+import { AVAX, BSC, BTC, JINX_MAINNET, OPTIMISM, WETH } from '../../utils/test-data/assets'
 import { getMinimumAmountCryptoHuman } from './getMinimumAmountCryptoHuman'
 
 jest.mock('../utils/zrxService')
@@ -14,7 +14,7 @@ jest.mock('state/zustand/swapperStore/amountSelectors', () => ({
 
 describe('getMinimumAmountCryptoHuman', () => {
   it('returns minimumAmountCryptoHuman and maximumAmountCryptoHuman', () => {
-    const maybeMin = getMinimumAmountCryptoHuman(FOX_MAINNET, WETH)
+    const maybeMin = getMinimumAmountCryptoHuman(JINX_MAINNET, WETH)
     expect(maybeMin.isErr()).toBe(false)
     const min = maybeMin.unwrap()
     expect(min).toBe('1')

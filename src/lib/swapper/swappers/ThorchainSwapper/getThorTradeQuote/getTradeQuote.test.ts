@@ -4,7 +4,7 @@ import type { AxiosResponse, AxiosStatic } from 'axios'
 
 import type { GetTradeQuoteInput, TradeQuote } from '../../../api'
 import { SwapperName } from '../../../api'
-import { ETH, FOX_MAINNET } from '../../utils/test-data/assets'
+import { ETH, JINX_MAINNET } from '../../utils/test-data/assets'
 import { setupQuote } from '../../utils/test-data/setupSwapQuote'
 import type { InboundAddressResponse, ThornodePoolResponse } from '../types'
 import { mockInboundAddresses, thornodePools } from '../utils/test-data/responses'
@@ -56,7 +56,7 @@ const expectedQuoteResponse: TradeQuote<KnownChainIds.EthereumMainnet> = {
       rate: '144114.94366197183098591549',
       sources: [{ name: SwapperName.Thorchain, proportion: '1' }],
       buyAsset: ETH,
-      sellAsset: FOX_MAINNET,
+      sellAsset: JINX_MAINNET,
       accountNumber: 0,
     },
   ],
@@ -112,7 +112,7 @@ describe('getTradeQuote', () => {
       ...quoteInput,
       sellAmountBeforeFeesCryptoBaseUnit: '713014679420',
       buyAsset: ETH,
-      sellAsset: FOX_MAINNET,
+      sellAsset: JINX_MAINNET,
     }
 
     const maybeTradeQuote = await getThorTradeQuote(input, {
